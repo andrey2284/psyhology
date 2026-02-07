@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Елизавета Васильевна Рогачева | Клинический психолог</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --pink: #ffb6d9;
+            --pink-dark: #ff8ac4;
+            --blue: #a6d2ff;
+            --blue-dark: #7bc6ff;
+            --purple: #d4b5ff;
+            --purple-dark: #c79cff;
+            --text: #2c2c2c;
+            --text-light: #5a5a5a;
+            --white-layer: rgba(255, 255, 255, 0.92);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Georgia', 'Merriweather', serif;
+            line-height: 1.8;
+            color: var(--text);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .background {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #ffcce6 0%, #a6d2ff 50%, #d4b5ff 100%);
+            overflow: hidden;
+        }
+        
+        .wave {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 200%; height: 300px;
+            background: linear-gradient(90deg, 
+                rgba(255, 182, 217, 0.25) 0%,
+                rgba(214, 181, 255, 0.25) 50%,
+                rgba(166, 210, 255, 0.25) 100%
+            );
+            border-radius: 50% 50% 0 0;
+            animation: wave 20s linear infinite;
+        }
+        
+        .wave-1 { height: 250px; bottom: 0; opacity: 0.4; animation: wave 25s linear infinite reverse; }
+        .wave-2 { height: 200px; bottom: 50px; opacity: 0.3; animation: wave 30s linear infinite; }
+        
+        @keyframes wave {
+            0% { transform: translateX(0) rotate(0deg); }
+            100% { transform: translateX(-50%) rotate(1deg); }
+        }
+        
+        .page-wrapper {
+            position: relative;
+            background-color: var(--white-layer);
+            min-height: 100vh;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.2);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px;
+            position: relative;
+        }
+        
+        /* Навигация */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0 50px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+        
+        .logo {
+            visibility: hidden;
+        }
+        
+        .menu-toggle { display: none; }
+        
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            margin-left: auto;
+        }
+        
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1.1rem;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background: transparent;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .nav-btn:hover {
+            border-color: rgba(0, 0, 0, 0.12);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Главный заголовок */
+        .hero {
+            text-align: center;
+            padding: 60px 0 80px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            color: var(--text);
+        }
+        
+        /* Секция с фото и текстом */
+        .about-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: start;
+            margin: 40px 0 80px;
+        }
+        
+        .photo-frame {
+            width: 100%;
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .about-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .about-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--text);
+            font-weight: 400;
+        }
+        
+        .about-intro p {
+            margin-bottom: 25px;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--text);
+        }
+        
+        /* Основной текст */
+        .content-section {
+            padding: 40px 0 80px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        .content-block {
+            margin-bottom: 50px;
+        }
+        
+        .content-block h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--text);
+            font-weight: 400;
+        }
+        
+        .content-block p {
+            margin-bottom: 25px;
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: var(--text);
+        }
+        
+        /* Список сфер */
+        .spheres-list {
+            background: linear-gradient(135deg, rgba(255, 182, 217, 0.1), rgba(166, 210, 255, 0.1));
+            padding: 35px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border-left: 5px solid var(--pink);
+        }
+        
+        .spheres-list h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--text);
+        }
+        
+        .spheres-list ul {
+            list-style-type: none;
+        }
+        
+        .spheres-list li {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .spheres-list li:before {
+            content: "•";
+            color: var(--pink);
+            font-size: 2.5rem;
+            position: absolute;
+            left: 0;
+            top: -10px;
+        }
+        
+        /* Ценовой блок */
+        .pricing-note {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            margin: 60px 0 40px;
+            border: 2px dashed rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-note h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .pricing-note p {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+        
+        /* Контакты */
+        .contacts-section {
+            padding: 60px 0 80px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .messengers-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 40px 0 60px;
+        }
+        
+        .messenger-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 30px 25px;
+            background: white;
+            border-radius: 20px;
+            text-decoration: none;
+            color: var(--text);
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            min-width: 160px;
+        }
+        
+        .messenger-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .messenger-icon {
+            font-size: 2.8rem;
+        }
+        
+        .messenger-text {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        /* Telegram */
+        .telegram { background: linear-gradient(135deg, #34aadf, #0088cc); color: white; }
+        
+        /* WhatsApp */
+        .whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); color: white; }
+        
+        /* VK */
+        .vk { background: linear-gradient(135deg, #4c75a3, #2a5885); color: white; }
+        
+        /* Календарь */
+        .calendar-section {
+            background: linear-gradient(135deg, rgba(255, 182, 217, 0.15), rgba(166, 210, 255, 0.15));
+            padding: 50px;
+            border-radius: 25px;
+            margin: 60px 0 40px;
+            text-align: center;
+        }
+        
+        .calendar-section h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--text);
+        }
+        
+        .calendar-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 45px;
+            font-size: 1.3rem;
+            background: linear-gradient(135deg, var(--pink), var(--blue));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 20px;
+            box-shadow: 0 15px 35px rgba(255, 182, 217, 0.3);
+        }
+        
+        .calendar-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 45px rgba(255, 182, 217, 0.4);
+        }
+        
+        /* Две основные кнопки - ОСТАЛАСЬ ТОЛЬКО ОДНА (АНОНИМНАЯ) */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .secondary-btn {
+            padding: 22px 45px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            border: 2px solid var(--text);
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            min-width: 280px;
+            justify-content: center;
+            color: var(--text);
+        }
+        
+        .secondary-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+            transform: translateY(-5px);
+        }
+        
+        /* Модальное окно для анонимной почты */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 50px;
+            border-radius: 25px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+        }
+        
+        .modal-email {
+            font-size: 1.5rem;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.03);
+            border-radius: 15px;
+            word-break: break-all;
+            cursor: pointer;
+            font-family: monospace;
+        }
+        
+        /* Футер */
+        footer {
+            margin-top: 100px;
+            padding-top: 50px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid rgba(0,0,0,0.08);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            .hero { padding: 40px 0 60px; }
+            .hero h1 { font-size: 2.2rem; }
+            .about-content { 
+                grid-template-columns: 1fr; 
+                gap: 40px;
+                margin: 30px 0 60px;
+            }
+            .photo-frame { 
+                max-width: 400px; 
+                margin: 0 auto;
+                height: 400px;
+            }
+            .about-intro p, .content-block p { font-size: 1.1rem; }
+            .messengers-grid { gap: 20px; }
+            .messenger-btn { min-width: 130px; padding: 25px 20px; }
+            .calendar-section { padding: 30px 20px; }
+            .action-buttons { flex-direction: column; align-items: center; }
+            .secondary-btn { width: 100%; max-width: 320px; }
+            .spheres-list { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="wave wave-1"></div>
+        <div class="wave wave-2"></div>
+    </div>
+    
+    <div class="page-wrapper">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Елизавета</a>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+                <div class="nav-links" id="navLinks">
+                    <a href="#about" class="nav-btn">Обо мне</a>
+                    <a href="#contacts" class="nav-btn">Контакты</a>
+                </div>
+            </nav>
+
+            <header class="hero">
+                <h1>Здравствуйте, интернет-путник</h1>
+            </header>
+
+            <!-- СЕКЦИЯ С ФОТО И ТЕКСТОМ -->
+            <section class="content-section" id="about">
+                <div class="about-content">
+                    <div class="photo-frame">
+                        <!-- ЗАГРУЗИТЕ ФАЙЛ my-photo.jpg В КОРЕНЬ РЕПОЗИТОРИЯ -->
+                        <img src="my-photo.jpg" alt="Елизавета Васильевна Рогачева" class="about-photo">
+                    </div>
+                    
+                    <div class="about-intro">
+                        <h2>Обо мне</h2>
+                        <p>Меня зовут Елизавета Васильевна Рогачева, являюсь клиническим психологом.</p>
+                        
+                        <p>Работаю в интегративном подходе: рассматриваю личность и ее проблемы с психодинамических позиций, сочетая методы проработки не только из психоанализа, но из кпт, гештальта и арт-терапии.</p>
+                        
+                        <p>Считаю важным условием для появления изменений - формирование знаний о себе: своих ценностях и приоритетах, своих возможностях и склонностях. Именно оценка и переоценка этих вещей является первым шагом к той жизни, к которой Вы стремитесь.</p>
+                    </div>
+                </div>
+                
+                <div class="spheres-list">
+                    <h3>Вы можете написать мне для решения проблем в следующих сферах:</h3>
+                    <ul>
+                        <li><strong>Самоотношение</strong>: Вы видите в себе какую-то черту характера, какое-то поведение, какой-то интерес, в общем, что-то, что Вам самим кажется неуместным и не правильным в Вашей жизни и хотели бы видеть себя более гармоничной личностью.</li>
+                        <li><strong>Принятие решений</strong>: Вы не можете сделать какой-то выбор, поскольку оба варианта кажутся одинаково привлекательными или одинаково отталкивающими.</li>
+                        <li><strong>Одиночество</strong>: Вы не можете найти романтического партнера, единомышленников, друзей или имеющиеся отношения по какой-то причине Вас не полностью устраивают.</li>
+                    </ul>
+                    
+                    <p style="margin-top: 30px; font-style: italic; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.1);">
+                        В целом, Вы можете прийти ко мне с любым запросом, который может быть похож на «поиск себя», «справится с тревожностью/агрессивностью/импульсивностью/болезнью», «найти ориентир», «решить конфликт», «научиться отстаивать себя и свои интересы».
+                    </p>
+                </div>
+                
+                <div class="pricing-note">
+                    <h3>Для уточнения стоимости консультаций свяжитесь со мной</h3>
+                    <p>Цена зависит от формата работы (личная встреча, онлайн) и длительности сессии. При первой встрече мы определим, какой подход будет наиболее эффективен для решения вашего запроса.</p>
+                </div>
+            </section>
+
+            <section class="contacts-section" id="contacts">
+                <h2>Связаться со мной</h2>
+                
+                <div class="messengers-grid">
+                    <!-- Telegram -->
+                    <a href="https://t.me/Ellie_Mareva" class="messenger-btn telegram" target="_blank">
+                        <div class="messenger-icon"><i class="fab fa-telegram-plane"></i></div>
+                        <div class="messenger-text">Telegram</div>
+                    </a>
+                    
+                    <!-- WhatsApp -->
+                    <a href="#" class="messenger-btn whatsapp" target="_blank" id="whatsappBtn">
+                        <div class="messenger-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="messenger-text">WhatsApp</div>
+                    </a>
+                    
+                    <!-- VK -->
+                    <a href="#" class="messenger-btn vk" target="_blank" id="vkBtn">
+                        <div class="messenger-icon"><i class="fab fa-vk"></i></div>
+                        <div class="messenger-text">ВКонтакте</div>
+                    </a>
+                </div>
+                
+                <div class="calendar-section">
+                    <h3>Запись на консультацию</h3>
+                    <p>Выберите удобное время для встречи в моем онлайн-календаре. Вы увидите доступные слоты и сможете сразу забронировать сессию.</p>
+                    <button class="calendar-btn" id="calendarBtn">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>Открыть календарь записи</span>
+                    </button>
+                </div>
+                
+                <!-- ОСТАЛАСЬ ТОЛЬКО ОДНА КНОПКА (АНОНИМНАЯ ПОЧТА) -->
+                <div class="action-buttons">
+                    <button class="secondary-btn" id="anonymousBtn">
+                        <i class="far fa-envelope"></i>
+                        <span>Написать анонимно</span>
+                    </button>
+                </div>
+            </section>
+            
+            <footer>
+                <p>© 2024 Елизавета Васильевна Рогачева. Клинический психолог.</p>
+                <p style="margin-top: 15px; font-size: 0.9rem; color: #888;">Конфиденциальность и этика — основа моей работы</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Модальное окно для анонимной почты -->
+    <div class="modal" id="emailModal">
+        <div class="modal-content">
+            <h3>Написать анонимно</h3>
+            <p>Вы можете написать мне на почту, не указывая своё имя. Я отвечу в течение 24 часов.</p>
+            
+            <div class="modal-email" id="emailToCopy">
+                blisslovegood@outlook.com
+            </div>
+            
+            <div style="margin-top: 30px;">
+                <button style="padding: 12px 30px; background: #4a5568; color: white; border: none; border-radius: 8px; cursor: pointer;" 
+                        id="copyBtn">
+                    <i class="far fa-copy"></i> Скопировать почту
+                </button>
+                <button style="padding: 12px 30px; background: transparent; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; margin-left: 15px;" 
+                        id="closeModal">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Мобильное меню
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+        
+        // Анонимная почта
+        const anonymousBtn = document.getElementById('anonymousBtn');
+        const emailModal = document.getElementById('emailModal');
+        const closeModal = document.getElementById('closeModal');
+        const copyBtn = document.getElementById('copyBtn');
+        const emailToCopy = document.getElementById('emailToCopy');
+        
+        anonymousBtn.addEventListener('click', () => {
+            emailModal.style.display = 'flex';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            emailModal.style.display = 'none';
+        });
+        
+        emailModal.addEventListener('click', (e) => {
+            if (e.target === emailModal) {
+                emailModal.style.display = 'none';
+            }
+        });
+        
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(emailToCopy.textContent.trim())
+                .then(() => {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                    }, 2000);
+                });
+        });
+        
+        // Кнопка календаря
+        const calendarBtn = document.getElementById('calendarBtn');
+        calendarBtn.addEventListener('click', () => {
+            // ЗАМЕНИТЕ ЭТУ ССЫЛКУ НА СВОЙ КАЛЕНДАРЬ (Calendly, Google Calendar и т.д.)
+            // window.open('https://calendly.com/ваш-ник', '_blank');
+            
+            // Временное решение - показываем alert
+            alert('Скоро здесь появится календарь для записи. А пока вы можете написать мне в Telegram для согласования времени.');
+        });
+        
+        // WhatsApp и VK кнопки
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const vkBtn = document.getElementById('vkBtn');
+        
+        whatsappBtn.addEventListener('click', (e) => {
+            if (whatsappBtn.getAttribute('href') === '#') {
+                e.preventDefault();
+                const phone = prompt('Введите ваш номер WhatsApp (только цифры, например 79991234567):');
+                if (phone) {
+                    whatsappBtn.href = `https://wa.me/${phone}`;
+                    window.open(whatsappBtn.href, '_blank');
+                }
+            }
+        });
+        
+        vkBtn.addEventListener('click', (e) => {
+            if (vkBtn.getAttribute('href') === '#') {
+                e.preventDefault();
+                const vkId = prompt('Введите ваш ID ВКонтакте:');
+                if (vkId) {
+                    vkBtn.href = `https://vk.com/${vkId}`;
+                    window.open(vkBtn.href, '_blank');
+                }
+            }
+        });
+        
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Адаптивное меню
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+            } else {
+                navLinks.style.display = 'none';
+            }
+        });
+        
+        // Инициализация меню на мобильных
+        if (window.innerWidth <= 768) {
+            navLinks.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
