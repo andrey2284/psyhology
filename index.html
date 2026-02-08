@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Клинический психолог Елизавета Васильевна Рогачева. Интегративный подход, психоанализ, КПТ, гештальт и арт-терапия.">
+    <meta name="keywords" content="клинический психолог, психотерапия, консультация психолога, психологическая помощь, Елизавета Рогачева">
+    <title>Елизавета Васильевна Рогачева | Клинический психолог</title>
+    
+    <!-- Защитные заголовки -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; font-src https://cdnjs.cloudflare.com; img-src 'self' data: https:;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
+    <!-- Оптимизированная версия Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/regular.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" crossorigin="anonymous">
+    
+    <style>
+        :root {
+            --pink: #ff7eb3;
+            --light-pink: #ffe9f4;
+            --light-blue: #7eb8ff;
+            --purple-border: #E0B0FF;
+            --calendar-bg: #6A8B3D; /* Исправлен контраст (было #7B9B4A) */
+            --calendar-hover: #7B9B4A;
+            --max-btn-bg: #5A4AE9; /* Исправлен контраст (было #6A5AF9) */
+            --max-btn-hover: #4540D7;
+            --text: #333344;
+            --text-light: #666677;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+            --border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+        
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        /* Улучшенная производительность: отключить анимации для пользователей с настройками */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        body {
+            font-family: 'Georgia', 'Merriweather', serif;
+            line-height: 1.8;
+            color: var(--text);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #AEEAFF 0%, #ffe9f4 50%, #AEEAFF 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 15s ease infinite;
+            padding: 30px 20px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            body {
+                animation: none;
+            }
+        }
+        
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .page-wrapper {
+            position: relative;
+            min-height: calc(100vh - 60px);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px;
+            position: relative;
+        }
+        
+        /* Навигация */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 0 20px;
+            border-bottom: 1px solid rgba(174, 234, 255, 0.3);
+        }
+        
+        .logo {
+            display: none;
+        }
+        
+        .menu-toggle { 
+            display: none;
+            background: transparent;
+            border: var(--border);
+            padding: 8px 12px;
+            cursor: pointer;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text);
+        }
+        
+        .menu-toggle:focus {
+            outline: 2px solid var(--pink);
+            outline-offset: 2px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+        
+        .nav-btn {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 1.05rem;
+            padding: 8px 0;
+            background: transparent;
+            transition: var(--transition);
+            border: none;
+            font-weight: 500;
+            position: relative;
+            text-align: justify;
+        }
+        
+        .nav-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--pink);
+            opacity: 0.7;
+        }
+        
+        .nav-btn:hover::after,
+        .nav-btn:focus::after,
+        .nav-btn.active::after {
+            opacity: 1;
+        }
+        
+        /* Улучшенная доступность для фокуса */
+        .nav-btn:focus-visible {
+            outline: 2px solid var(--pink);
+            outline-offset: 4px;
+        }
+        
+        /* Главный заголовок */
+        .hero {
+            text-align: center;
+            padding: 15px 0 30px;
+            margin-left: 0;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0;
+            font-weight: 350;
+            color: var(--text);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Секция с фото и текстом */
+        .about-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: start;
+            margin: 20px 0 50px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-frame {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3/4; /* Сохраняем пропорции */
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            background: rgba(245, 245, 245, 0.3);
+            position: relative;
+            border-radius: 1px;
+        }
+        
+        .about-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        
+        .photo-frame:hover .about-photo {
+            transform: scale(1.02);
+        }
+        
+        /* Блок "Обо мне" */
+        .about-text-block {
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid var(--purple-border);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-top: 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+        }
+        
+        .about-text-block h2 {
+            font-size: 1.9rem;
+            margin-bottom: 25px;
+            color: var(--text);
+            font-weight: 400;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(174, 234, 255, 0.5);
+            text-align: center;
+        }
+        
+        .about-text-block p {
+            margin-bottom: 25px;
+            font-size: 1.18rem;
+            line-height: 1.85;
+            color: var(--text);
+            text-align: justify;
+        }
+        
+        /* Список сфер */
+        .spheres-list {
+            padding: 40px;
+            margin: 40px 0;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid var(--purple-border);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+        }
+        
+        .spheres-list h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--text);
+            font-weight: 400;
+            text-align: center;
+        }
+        
+        .spheres-list ul {
+            list-style-type: none;
+        }
+        
+        .spheres-list li {
+            margin-bottom: 20px;
+            font-size: 1.16rem;
+            line-height: 1.75;
+            padding-left: 35px;
+            position: relative;
+            color: var(--text);
+            text-align: justify;
+        }
+        
+        .spheres-list li:before {
+            content: "◦";
+            color: #ffb6d9;
+            font-size: 2.5rem;
+            position: absolute;
+            left: 0;
+            top: -8px;
+            opacity: 0.7;
+        }
+        
+        /* ОБЪЕДИНЕННЫЙ БЛОК КОНТАКТОВ */
+        .contacts-unified-block {
+            padding: 40px;
+            margin: 50px 0 40px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 2px solid var(--purple-border);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+        }
+        
+        .contacts-unified-block h3 {
+            font-size: 1.9rem;
+            margin-bottom: 35px;
+            color: var(--text);
+            font-weight: 400;
+            line-height: 1.4;
+            text-align: center;
+        }
+        
+        /* Маленькие кнопки соцсетей с одинаковыми иконками */
+        .small-social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .small-social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 25px;
+            font-size: 1.05rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: var(--transition);
+            min-width: 150px;
+            max-width: 200px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(5px);
+            text-align: center;
+            font-weight: 600; /* Улучшенная читаемость */
+        }
+        
+        /* ВСЕ КНОПКИ С ОДИНАКОВОЙ ИКОНКОЙ ОБЛАЧКА СООБЩЕНИЙ */
+        .small-social-btn.telegram {
+            background: linear-gradient(145deg, rgba(52, 170, 223, 0.9), rgba(0, 136, 204, 0.9));
+            color: white;
+        }
+        
+        .small-social-btn.whatsapp {
+            background: linear-gradient(145deg, rgba(37, 211, 102, 0.9), rgba(18, 140, 126, 0.9));
+            color: white;
+        }
+        
+        .small-social-btn.max {
+            background: linear-gradient(145deg, var(--max-btn-bg), var(--max-btn-hover));
+            color: white;
+        }
+        
+        .small-social-btn:hover,
+        .small-social-btn:focus {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+        
+        /* Улучшенная доступность фокуса */
+        .small-social-btn:focus-visible {
+            outline: 3px solid #ffffff;
+            outline-offset: 3px;
+        }
+        
+        /* Одинаковая иконка облачка сообщений для всех кнопок мессенджеров */
+        .small-social-btn i {
+            font-size: 1.2em;
+        }
+        
+        /* Кнопка анонимной почты */
+        .anonymous-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 16px 35px;
+            font-size: 1.15rem;
+            border-radius: 25px;
+            border: 2px solid var(--text);
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 20px;
+            min-width: 220px;
+            font-family: inherit;
+            backdrop-filter: blur(5px);
+            font-weight: 600;
+        }
+        
+        .anonymous-btn:hover,
+        .anonymous-btn:focus {
+            background: rgba(174, 234, 255, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+            outline: none;
+        }
+        
+        .anonymous-btn:focus-visible {
+            outline: 2px solid var(--text);
+            outline-offset: 3px;
+        }
+        
+        /* Кнопка календаря с исправленным контрастом */
+        .calendar-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 17px 40px;
+            font-size: 1.2rem;
+            background: var(--calendar-bg);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 30px;
+            box-shadow: 0 10px 25px rgba(106, 139, 61, 0.4);
+            font-family: inherit;
+            font-weight: 600;
+        }
+        
+        .calendar-btn:hover,
+        .calendar-btn:focus {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(106, 139, 61, 0.6);
+            outline: none;
+            background: var(--calendar-hover);
+            color: white;
+        }
+        
+        .calendar-btn:focus-visible {
+            outline: 3px solid #ffffff;
+            outline-offset: 3px;
+        }
+        
+        .contacts-buttons-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        /* Модальное окно для анонимной почты */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            backdrop-filter: blur(8px);
+        }
+        
+        .modal-content {
+            padding: 45px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 
+                0 1px 3px rgba(0,0,0,0.02),
+                0 15px 30px rgba(0,0,0,0.08),
+                0 30px 60px rgba(0,0,0,0.08);
+            border-radius: 1px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        
+        .modal-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+        
+        .modal-email {
+            font-size: 1.3rem;
+            margin: 25px 0;
+            padding: 18px;
+            background: rgba(174, 234, 255, 0.3);
+            word-break: break-all;
+            cursor: pointer;
+            font-family: monospace;
+            border: 1px dashed rgba(0, 0, 0, 0.1);
+            color: var(--text);
+            transition: background-color 0.3s;
+            border-radius: 1px;
+        }
+        
+        .modal-email.copied {
+            background: rgba(214, 255, 220, 0.5);
+            border-color: #25d366;
+        }
+        
+        /* Кнопки в модальном окне */
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .modal-btn {
+            padding: 12px 30px;
+            background: var(--text);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .modal-btn-secondary {
+            background: transparent;
+            border: 1px solid var(--text-light);
+            color: var(--text);
+        }
+        
+        .modal-btn:hover {
+            opacity: 0.9;
+        }
+        
+        /* Футер с автообновлением года */
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            text-align: center;
+            color: var(--text-light);
+            border-top: 1px solid rgba(174, 234, 255, 0.3);
+            font-size: 0.95rem;
+        }
+        
+        /* Стиль для заключительного текста */
+        .conclusion-text {
+            margin-top: 30px;
+            font-style: italic;
+            padding-top: 20px;
+            border-top: 1px solid rgba(174, 234, 255, 0.5);
+            color: var(--text-light);
+            text-align: justify;
+            font-size: 1.16rem;
+            line-height: 1.75;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+            }
+            
+            .container { 
+                padding: 20px 15px; 
+            }
+            
+            .hero { 
+                padding: 10px 0 20px; 
+            }
+            
+            .hero h1 { 
+                font-size: 2rem; 
+            }
+            
+            .about-content { 
+                grid-template-columns: 1fr; 
+                gap: 30px;
+                margin: 15px 0 40px;
+            }
+            
+            .photo-frame { 
+                max-width: 100%;
+                margin: 0 auto;
+            }
+            
+            .about-text-block, .spheres-list, .contacts-unified-block { 
+                padding: 25px; 
+            }
+            
+            .small-social-buttons { 
+                gap: 15px; 
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .small-social-btn { 
+                min-width: 130px; 
+                padding: 12px 20px;
+                max-width: 100%;
+                width: 100%;
+            }
+            
+            .menu-toggle { 
+                display: block; 
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 15px;
+                background: rgba(255, 255, 255, 0.95);
+                padding: 15px;
+                flex-direction: column;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                z-index: 100;
+                border-radius: 0;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .anonymous-btn, .calendar-btn {
+                min-width: auto;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            /* На мобильных выравниваем по левому краю */
+            .about-text-block p,
+            .spheres-list li,
+            .conclusion-text {
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px 5px;
+            }
+            
+            .container { 
+                padding: 15px 10px; 
+            }
+            
+            .hero h1 { 
+                font-size: 1.6rem; 
+            }
+            
+            .about-text-block, .spheres-list, .contacts-unified-block { 
+                padding: 15px; 
+            }
+            
+            .small-social-btn { 
+                min-width: 100%; 
+                padding: 15px 20px;
+            }
+            
+            .modal-content { 
+                padding: 25px 15px;
+                margin: 0 10px;
+            }
+            
+            .modal-email { 
+                font-size: 1.1rem; 
+            }
+        }
+        
+        /* Улучшенные стили для фокуса */
+        *:focus {
+            outline: 2px solid var(--pink);
+            outline-offset: 2px;
+        }
+        
+        button:focus:not(:focus-visible),
+        a:focus:not(:focus-visible) {
+            outline: none;
+        }
+        
+        /* Улучшенная читаемость для выделения текста */
+        ::selection {
+            background-color: rgba(255, 126, 179, 0.3);
+            color: var(--text);
+        }
+        
+        /* Загрузка изображений с ленивой загрузкой */
+        .about-photo {
+            loading: lazy;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <nav aria-label="Основная навигация">
+                <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="navLinks">
+                    <span class="sr-only">Меню</span>
+                    ☰
+                </button>
+                <div class="nav-links" id="navLinks" role="menu">
+                    <a href="#about" class="nav-btn" role="menuitem">Обо мне</a>
+                    <a href="#contacts" class="nav-btn active" role="menuitem">Контакты</a>
+                </div>
+            </nav>
+
+            <header class="hero">
+                <h1>Здравствуй, интернет-путник</h1>
+            </header>
+
+            <main>
+                <section class="content-section" id="about">
+                    <div class="about-content">
+                        <div class="photo-frame">
+                            <img src="my-photo.jpg" alt="Елизавета Васильевна Рогачева, клинический психолог" class="about-photo" id="profilePhoto">
+                        </div>
+                        
+                        <div class="about-text-block">
+                            <h2>Обо мне</h2>
+                            <p>Меня зовут Елизавета Васильевна Рогачева, являюсь клиническим психологом.</p>
+                            
+                            <p>Работаю в интегративном подходе: рассматриваю личность и ее проблемы с психодинамических позиций, сочетая аналитические методы с методами из КПТ, гештальта и арт-терапии.</p>
+                            
+                            <p>Считаю важным условием для появления изменений - формирование знаний о себе: своих ценностях и приоритетах, своих возможностях и склонностях. Именно оценка и переоценка этих вещей является первым шагом к той жизни, к которой Вы стремитесь.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="spheres-list">
+                        <h3>Вы можете написать мне для решения проблем в следующих сферах:</h3>
+                        <ul>
+                            <li><strong>Самоотношение</strong>: Вы видите в себе какую-то черту характера, какое-то поведение, какой-то интерес, в общем, что-то, что Вам самим кажется неуместным и не правильным в Вашей жизни и хотели бы видеть себя более гармоничной личностью.</li>
+                            <li><strong>Принятие решений</strong>: Вы не можете сделать какой-то выбор, поскольку оба варианта кажутся одинаково привлекательными или одинаково отталкивающими.</li>
+                            <li><strong>Одиночество</strong>: Вы не можете найти романтического партнера, единомышленников, друзей или имеющиеся отношения по какой-то причине Вас не полностью устраивают.</li>
+                        </ul>
+                        
+                        <p class="conclusion-text">
+                            В целом, Вы можете прийти ко мне с любым запросом, который может быть похож на «поиск себя», «справится с тревожностью/агрессивностью/импульсивностью/болезнью», «найти ориентир», «решить конфликт», «научиться отстаивать себя и свои интересы».
+                        </p>
+                    </div>
+                    
+                    <div class="contacts-unified-block" id="contacts">
+                        <h3>Для уточнения стоимости консультаций<br>свяжитесь со мной</h3>
+                        
+                        <div class="small-social-buttons">
+                            <a href="https://t.me/Ellie_Mareva" class="small-social-btn telegram" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram (откроется в новой вкладке)">
+                                <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                                <span>Telegram</span>
+                            </a>
+                            
+                            <a href="#" class="small-social-btn whatsapp" id="whatsappBtn" aria-label="Написать в WhatsApp">
+                                <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            
+                            <a href="#" class="small-social-btn max" id="maxBtn" aria-label="Связаться через MAX">
+                                <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                                <span>MAX</span>
+                            </a>
+                        </div>
+                        
+                        <div class="contacts-buttons-container">
+                            <button class="anonymous-btn" id="anonymousBtn" aria-label="Написать анонимно по электронной почте">
+                                <i class="far fa-envelope" aria-hidden="true"></i>
+                                <span>Написать анонимно</span>
+                            </button>
+                            
+                            <button class="calendar-btn" id="calendarBtn" aria-label="Открыть календарь для записи на консультацию">
+                                <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                                <span>Запись на консультацию</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            
+            <footer>
+                <p id="copyright">© 2024 Елизавета Васильевна Рогачева. Клинический психолог.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Модальное окно для анонимной почты -->
+    <div class="modal" id="emailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" style="display: none;">
+        <div class="modal-content">
+            <h3 id="modalTitle">Написать анонимно</h3>
+            <p id="modalDesc">Вы можете написать мне на почту, не указывая своё имя. Я отвечу в течение 24 часов.</p>
+            
+            <div class="modal-email" id="emailToCopy" role="button" tabindex="0" aria-label="Электронная почта для анонимного обращения. Нажмите Enter или кликните для копирования.">
+                elisaveta_psy@outlook.com
+            </div>
+            
+            <div class="modal-buttons">
+                <button class="modal-btn" id="copyBtn" aria-label="Скопировать адрес электронной почты">
+                    <i class="far fa-copy" aria-hidden="true"></i> Скопировать почту
+                </button>
+                <button class="modal-btn modal-btn-secondary" id="closeModal" aria-label="Закрыть окно">
+                    Закрыть
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Защитная функция для санитизации HTML
+        function sanitizeHTML(str) {
+            const temp = document.createElement('div');
+            temp.textContent = str;
+            return temp.innerHTML;
+        }
+        
+        // Безопасная обработка ошибок изображения
+        document.addEventListener('DOMContentLoaded', function() {
+            const profilePhoto = document.getElementById('profilePhoto');
+            if (profilePhoto) {
+                profilePhoto.onerror = function() {
+                    this.style.display = 'none';
+                    const placeholder = document.createElement('div');
+                    placeholder.style.cssText = 'width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#666;font-style:italic;padding:20px;text-align:center;';
+                    placeholder.textContent = 'Фото будет загружено скоро';
+                    this.parentElement.appendChild(placeholder);
+                };
+                
+                // Добавляем lazy loading если поддерживается
+                if ('loading' in HTMLImageElement.prototype) {
+                    profilePhoto.loading = 'lazy';
+                }
+            }
+            
+            // Автоматическое обновление года в футере
+            updateCopyrightYear();
+            
+            // Инициализация меню
+            initMenu();
+            
+            // Инициализация модального окна
+            initModal();
+            
+            // Инициализация кнопок
+            initButtons();
+        });
+        
+        // Автоматическое обновление года в футере
+        function updateCopyrightYear() {
+            const currentYear = new Date().getFullYear();
+            const copyrightElement = document.getElementById('copyright');
+            if (copyrightElement) {
+                copyrightElement.textContent = `© ${currentYear} Елизавета Васильевна Рогачева. Клинический психолог.`;
+            }
+        }
+        
+        // Мобильное меню
+        function initMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (!menuToggle || !navLinks) return;
+            
+            menuToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !isExpanded);
+                navLinks.classList.toggle('active');
+            });
+            
+            // Закрытие меню при клике вне его
+            document.addEventListener('click', function(e) {
+                if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Закрытие меню при клике на ссылку
+            navLinks.querySelectorAll('.nav-btn').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+            
+            // Адаптация меню для мобильных
+            if (window.innerWidth <= 768) {
+                navLinks.style.display = 'none';
+            }
+            
+            // Исправленный ресайз меню
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('active');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    navLinks.style.display = '';
+                } else if (!navLinks.classList.contains('active')) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        }
+        
+        // Модальное окно для анонимной почты
+        function initModal() {
+            const anonymousBtn = document.getElementById('anonymousBtn');
+            const emailModal = document.getElementById('emailModal');
+            const closeModal = document.getElementById('closeModal');
+            const copyBtn = document.getElementById('copyBtn');
+            const emailToCopy = document.getElementById('emailToCopy');
+            
+            if (!anonymousBtn || !emailModal) return;
+            
+            // Открытие модального окна
+            anonymousBtn.addEventListener('click', function() {
+                emailModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+            
+            // Закрытие модального окна
+            if (closeModal) {
+                closeModal.addEventListener('click', function() {
+                    emailModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                });
+            }
+            
+            // Закрытие по клику на фон
+            emailModal.addEventListener('click', function(e) {
+                if (e.target === emailModal) {
+                    emailModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Закрытие по ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && emailModal.style.display === 'flex') {
+                    emailModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Копирование email
+            if (copyBtn && emailToCopy) {
+                copyBtn.addEventListener('click', function() {
+                    const emailText = emailToCopy.textContent.trim();
+                    
+                    // Используем современный API
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(emailText)
+                            .then(() => showCopyFeedback(emailToCopy, copyBtn))
+                            .catch(err => {
+                                console.error('Ошибка копирования: ', err);
+                                fallbackCopy(emailText, emailToCopy, copyBtn);
+                            });
+                    } else {
+                        fallbackCopy(emailText, emailToCopy, copyBtn);
+                    }
+                });
+                
+                // Копирование при клике на email
+                emailToCopy.addEventListener('click', function() {
+                    copyBtn.click();
+                });
+                
+                // Копирование по клавишам
+                emailToCopy.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        copyBtn.click();
+                    }
+                });
+            }
+        }
+        
+        // Вспомогательная функция для копирования
+        function showCopyFeedback(emailElement, buttonElement) {
+            emailElement.classList.add('copied');
+            const originalText = buttonElement.innerHTML;
+            buttonElement.innerHTML = '<i class="fas fa-check"></i> Скопировано!';
+            buttonElement.style.background = '#25d366';
+            
+            setTimeout(() => {
+                emailElement.classList.remove('copied');
+                buttonElement.innerHTML = originalText;
+                buttonElement.style.background = '';
+            }, 2000);
+        }
+        
+        // Fallback копирования для старых браузеров
+        function fallbackCopy(text, emailElement, buttonElement) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopyFeedback(emailElement, buttonElement);
+                }
+            } catch (err) {
+                console.error('Fallback копирования не удалось: ', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        // Инициализация всех кнопок
+        function initButtons() {
+            // Кнопка календаря
+            const calendarBtn = document.getElementById('calendarBtn');
+            if (calendarBtn) {
+                calendarBtn.addEventListener('click', function() {
+                    // В реальном проекте здесь будет ссылка на Calendly или аналогичный сервис
+                    const useCalendly = confirm('Для записи на консультацию вы будете перенаправлены в календарь. Продолжить?');
+                    if (useCalendly) {
+                        window.open('https://calendly.com/', '_blank', 'noopener,noreferrer');
+                    }
+                });
+            }
+            
+            // WhatsApp кнопка с улучшенной безопасностью
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            if (whatsappBtn) {
+                whatsappBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const phone = prompt('Введите ваш номер WhatsApp (только цифры, например 79991234567):');
+                    if (phone) {
+                        // Строгая валидация номера
+                        const cleanPhone = phone.replace(/\D/g, '');
+                        
+                        // Проверка на российский номер (начинается с 7 или 8) или международный
+                        if (/^[0-9]{10,15}$/.test(cleanPhone)) {
+                            // Дополнительная очистка
+                            const safePhone = cleanPhone.replace(/[^0-9]/g, '');
+                            const whatsappUrl = `https://wa.me/${safePhone}`;
+                            
+                            // Безопасное открытие окна
+                            const newWindow = window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+                            if (newWindow) {
+                                newWindow.opener = null;
+                            }
+                        } else {
+                            alert('Пожалуйста, введите корректный номер телефона (10-15 цифр)');
+                        }
+                    }
+                });
+            }
+            
+            // MAX кнопка
+            const maxBtn = document.getElementById('maxBtn');
+            if (maxBtn) {
+                maxBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('MAX - это платформа для безопасного обмена сообщениями. Ссылка будет добавлена в ближайшее время.');
+                });
+            }
+            
+            // Плавная прокрутка с безопасностью
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#' || targetId === '#!') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // Проверка безопасности
+                        if (!/^#[a-zA-Z][a-zA-Z0-9_-]*$/.test(targetId)) {
+                            return; // Защита от небезопасных якорей
+                        }
+                        
+                        const navHeight = document.querySelector('nav')?.offsetHeight || 0;
+                        const targetPosition = targetElement.offsetTop - navHeight - 10;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Безопасное изменение истории
+                        try {
+                            history.pushState(null, '', targetId);
+                        } catch (e) {
+                            console.warn('Не удалось изменить историю браузера');
+                        }
+                        
+                        // Обновление активной ссылки
+                        document.querySelectorAll('.nav-btn').forEach(btn => {
+                            btn.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Защита от открытия небезопасных ссылок
+            document.querySelectorAll('a[target="_blank"]').forEach(link => {
+                if (!link.getAttribute('rel')) {
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+        }
+        
+        // Обработка ошибок с безопасностью
+        window.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG') {
+                console.warn('Ошибка загрузки изображения:', e.target.src);
+                // Безопасное скрытие изображения
+                e.target.style.opacity = '0';
+                e.target.style.visibility = 'hidden';
+            }
+        }, true);
+        
+        // Защита от кликджекинга
+        if (window !== window.top) {
+            try {
+                window.top.location = window.location;
+            } catch (e) {
+                document.body.innerHTML = '<h1>Этот сайт должен открываться в отдельном окне</h1>';
+            }
+        }
+        
+        // SR-only класс для скрытого текста
+        const style = document.createElement('style');
+        style.textContent = '.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }';
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
